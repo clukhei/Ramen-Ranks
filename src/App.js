@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import './App.css'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import SideBar from './components/NavBar/NavBar'
+import Table from './components/TableRanks/TableRanks'
+import _  from 'lodash'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const onLoadPage = async id => {
+  const res = await fetch('http://starlord.hackerearth.com/TopRamen', {})
+  const data = await res.json()
+  return data
 }
 
-export default App;
+
+
+
+function App() {
+  const [ramenData, setRamenData] = useState(null)
+  const [year, setYear] = useState(null)
+
+  useEffect(() => {
+    onLoadPage().then(data => setRamenData(data))
+  }, [year])
+
+
+console.log(ramenData)
+
+  if (!ramenData) {
+    return null
+  } else {
+    return (
+      <div className="app">
+        <BrowserRouter>
+          <Switch>
+            <Route path="/">
+              <SideBar data={ramenData} />
+              <Table data= {ramenData} />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </div>
+    )
+  }
+}
+
+export default App
