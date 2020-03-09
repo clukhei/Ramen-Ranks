@@ -1,3 +1,26 @@
+## StashAway FE 2020 challenge
+Lessons Learnt after the 3 hour long challenge: 
+
+1) Set up React App before starting the challenge!
+- It was my first challenge ever and I was inexperienced. Looking back I will install create-react-app and setup all necessary dependencies before starting. \
+- Installation took a whopping 20 minutes
+- Plus, hiccups in the node modules installation--> Had to uninstall and install them which took another 10-15 min
+
+2) End earlier not minutes before 
+- I underestimated my file zipper, it took time to zip the files for file upload submission 
+- Alternatively, upload the repo on github and give a link! Beats submitting nothing 
+
+3) Its alright to use existing repos and modify it accordingly to the requirements of the challenge
+- I could have used preexisting repos and customised it to the needs of the challenge
+- Instead, I wrote the app from scratched
+
+4) Aim for the simplest working condition of app
+- Its tempting to plan to create a wholesome app , but there is really no time to be greedy 
+- Get the simplest working form of the app that looks presentable 
+
+Good luck to anyone who is taking online challenges! 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
